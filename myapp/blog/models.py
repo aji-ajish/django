@@ -25,4 +25,15 @@ class Post(models.Model):
         return self.title
 
 
+class AboutUs(models.Model):
+    content=models.TextField()
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    message = models.TextField()
+    picture=models.ImageField(null=True,upload_to='images/')
+
+    def __str__(self) :
+        return self.name
 
